@@ -9,4 +9,4 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-app.include_router(api.apiRouter, prefix = "/")
+app.include_router(api.apiRouter, prefix = "/api")
