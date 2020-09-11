@@ -1,13 +1,26 @@
 import os
-from modules.file.dirs.controlDir import ControlDir
+from modules.file.dirs.controlDir import ControlDir, CONTROL_DIR_PATH
+from modules.status.httpd.httpdStatus import CheckSyntax, GetStatus
 
-path = ControlDir.httpd.value + "httpd"
+path = CONTROL_DIR_PATH[ControlDir.httpd.value] + "httpd"
 
 def Start():
-	return (os.system(path + " -k start") == 0)
+	if not GetStatus():
+		if CheckSyntax():
+			return (os.system(path + " -k start") == 0)
+		return False
+	Restart()
 
 def Restart():
-	return (os.system(path + " -k graceful") == 0)
+	if GetStatus():
+		if CheckSyntax():
+			return (os.system(path + " -k graceful") == 0)
+		return False
+	Start()
 
 def Stop():
-	return (os.system(path + " -k graceful-stop") == 0)
+	if GetStatus():
+		if CheckSyntax():
+			return (os.system(path + " -k graceful-stop") == 0)
+		return False
+	return True

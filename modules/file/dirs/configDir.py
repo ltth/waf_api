@@ -7,7 +7,7 @@ class ConfigDir(str, Enum):
 	httpd = "httpd"
 	proxy = "proxy"
 
-DIR_PATH = {
+CONFIG_DIR_PATH = {
 	"rule": "/opt/waf/crs-rules/rules/",
 	"rule_config": "/opt/waf/crs-rules/",
 	"waf_config": "/usr/local/apache2/conf/extra/",

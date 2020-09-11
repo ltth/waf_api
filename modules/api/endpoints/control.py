@@ -1,20 +1,19 @@
 from fastapi import APIRouter
-from modules.config.httpd.httpdControl import *
-import os
+from modules.config.httpd.httpdControl import Start, Restart, Stop
 
 route = APIRouter()
 
 @route.get("/start")
-def Start():
+def start():
 	Start()
 	return {}
 
 @route.get("/restart")
-def Start():
+def restart():
 	Restart()
 	return {}
 
 @route.get("/stop")
-def Start():
+def stop():
 	Stop()
 	return {}
