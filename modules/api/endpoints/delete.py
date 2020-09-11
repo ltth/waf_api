@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from modules.file.files.fileAttributes import FileAttributes
-from modules.file.dirs.dir import DIR_PATH
+from modules.file.dirs.configDir import DIR_PATH
 import os
 
 route = APIRouter()

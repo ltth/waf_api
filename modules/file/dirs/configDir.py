@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Dir(str, Enum):
+class ConfigDir(str, Enum):
 	rule = "rule"
 	rule_config = "rule_config"
 	waf_config = "waf_config"

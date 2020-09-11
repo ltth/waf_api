@@ -1,7 +1,7 @@
 from typing import Optional
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-from modules.file.dirs.dir import DIR_PATH, Dir
+from modules.file.dirs.configDir import DIR_PATH, ConfigDir
 
 route = APIRouter()
 
