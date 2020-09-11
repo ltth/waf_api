@@ -8,9 +8,9 @@ class ConfigDir(str, Enum):
 	proxy = "proxy"
 
 DIR_PATH = {
-	"rule": "/rule/rules/",
-	"rule_config": "/rule/",
-	"waf_config": "/waf/",
-	"httpd": "/httpd/",
-	"proxy": "/proxy/"
+	"rule": "/opt/waf/crs-rules/rules/",
+	"rule_config": "/opt/waf/crs-rules/",
+	"waf_config": "/usr/local/apache2/conf/extra/",
+	"httpd": "/usr/local/apache2/conf/",
+	"proxy": "/usr/local/apache2/conf/sites-enabled/"
 }
