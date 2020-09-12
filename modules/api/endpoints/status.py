@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-from modules.status.httpd.httpdStatus import *
+from modules.status.httpd.httpdStatus import GetHosts, GetModules, GetVersion
 from modules.status.waf.wafStatus import EnableCheck
 
 route = APIRouter()
