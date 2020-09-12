@@ -1,19 +1,23 @@
 from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 from modules.config.httpd.httpdControl import Start, Restart, Stop
 
 route = APIRouter()
 
 @route.get("/start")
 def start():
-	Start()
+	if Start() != True:
+		return JSONResponse(status_code = 500, content = {"error": "Syntax error"})
 	return {}
 
 @route.get("/restart")
 def restart():
-	Restart()
+	if Restart() != True:
+		return JSONResponse(status_code = 500, content = {"error": "Syntax error"})
 	return {}
 
 @route.get("/stop")
 def stop():
-	Stop()
+	if Stop() != True:
+		return JSONResponse(status_code = 500, content = {"error": "Syntax error"})
 	return {}
