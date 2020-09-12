@@ -7,7 +7,7 @@ route = APIRouter()
 
 @route.get("/{kind}/{filename}")
 def ViewFile(
-	kind: Dir,
+	kind: ConfigDir,
 	filename: str
 ):
 	try:
