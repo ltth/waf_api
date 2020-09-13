@@ -17,7 +17,9 @@ def ModeCheck():
 	else:
 		output = output.split('\n')
 		for i in output:
-			if len(i) > 13 or i[0] == "#":
+			if len(i) < 14:
+				continue
+			if i[0] == "#":
 				continue
 			if " On" in i:
 				return "On"
