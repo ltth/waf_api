@@ -11,7 +11,7 @@ def EnableCheck():
 
 def ModeCheck():
 	try:
-		output = subprocess.check_output(pathHttpd + " -M | grep 'SecRuleEngine '", shell = True).decode()
+		output = subprocess.check_output("cat " + pathHttpd + " | grep 'SecRuleEngine '", shell = True).decode()
 	except:
 		return False
 	else:
