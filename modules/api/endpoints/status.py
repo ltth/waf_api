@@ -8,7 +8,7 @@ route = APIRouter()
 @route.get("/waf", tags = ["waf status"])
 def wafStatus():
 	output = ModeCheck()
-	if output == False:
+	if output == False or output is None :
 		return JSONResponse(status_code = 500, content = {"error": "Can not find SecRuleEngine mode"})
 	return {"mode": output}
 
